@@ -2,12 +2,9 @@ import { useState } from 'react';
 import { calcPoints } from '../../data';
 import { usePredictions } from '../../hooks/usePredictions';
 import TabPartidos from '../../components/TabPartidos';
+import Header from '../../components/Header';
 
 const CURRENT_USER = 'p1';
-
-interface HeaderProps {
-  pts: number;
-}
 
 interface Toast {
   msg: string;
@@ -40,7 +37,7 @@ export default function MatchesPage() {
           padding: '16px 16px 80px',
         }}
       >
-        <Header pts={myPts} />
+        <Header title="Partidos" subtitle="Predictor Mundial 2026" points={myPts} />
 
         <TabPartidos
           currentUserId={CURRENT_USER}
@@ -75,21 +72,5 @@ export default function MatchesPage() {
         </div>
       )}
     </>
-  );
-}
-
-function Header({ pts }: HeaderProps) {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 16,
-      }}
-    >
-      <h3 style={{ margin: 0 }}>Partidos</h3>
-      <b>{pts} pts</b>
-    </div>
   );
 }

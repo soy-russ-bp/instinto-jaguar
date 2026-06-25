@@ -17,17 +17,21 @@ export const FACULTADES_DATA: Facultad[] = [
     nombre: 'Matemáticas',
     carreras: [
       { id: 'lis', nombre: 'Lic. en Ingeniería de Software' },
-      { id: 'cc', nombre: 'Lic. en Ciencias de la Computación' },
-      { id: 'mat', nombre: 'Lic. en Matemáticas' },
-      { id: 'act', nombre: 'Lic. en Actuaria' }
+      { id: 'lcc', nombre: 'Lic. en Ciencias de la Computación' },
+      { id: 'lic', nombre: 'Lic. en Ingeniería en Computación' },
+      { id: 'la', nombre: 'Lic. en Actuaria' },
+      { id: 'lem', nombre: 'Lic. en Enseñanza de la Matemática' },
+      { id: 'lm', nombre: 'Lic. en Matemáticas' }
     ]
   },
   {
-    id: 'feca',
-    nombre: 'Contaduría y Administración',
+    id: 'fi',
+    nombre: 'Facultad de Ingeniería',
     carreras: [
-      { id: 'la', nombre: 'Lic. en Administración' },
-      { id: 'cp', nombre: 'Lic. en Contador Público' }
+      { id: 'lic', nombre: 'Lic. en Ingeniería Civil' },
+      { id: 'lie', nombre: 'Lic. en Ingeniería en Energías Renovables' },
+      { id: 'lif', nombre: 'Lic. en Ingeniería Física' },
+      { id: 'lim', nombre: 'Lic. en Ingeniería Mecatrónica' },
     ]
   }
 ];

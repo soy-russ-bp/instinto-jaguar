@@ -1,26 +1,34 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import PartidosPage from './app/pages/matchesPage';
+import MainLayout from './app/layout/MainLayout';
+
+import MatchesPage from './app/pages/matchesPage';
 import RankingPage from './app/pages/rankingPage';
-import PerfilPage from './app/pages/profilePage';
+import ProfilePage from './app/pages/profilePage';
+
 import { RegisterForm } from './app/pages/auth/register/registerForm';
 
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/partidos" />} />
+      {/* Redirección inicial */}
+      <Route path="/" element={<Navigate to="/partidos" replace />} />
 
-      <Route path="/partidos" element={<PartidosPage />} />
-      <Route path="/ranking" element={<RankingPage />} />
-      <Route path="/perfil" element={<PerfilPage />} />
+      {/* Todas estas páginas usan el mismo layout */}
+      <Route element={<MainLayout />}>
+        <Route path="/partidos" element={<MatchesPage />} />
+        <Route path="/ranking" element={<RankingPage />} />
+        <Route path="/perfil" element={<ProfilePage />} />
+      </Route>
 
+      {/* Register NO usa el layout principal */}
       <Route path="/register" element={<RegisterForm />} />
 
-      <Route path="*" element={<h1>404</h1>} />
+      {/* Página no encontrada */}
+      <Route path="*" element={<h1>404 - Página no encontrada</h1>} />
     </Routes>
   );
 }
-
 
 
 
@@ -59,6 +67,7 @@ export default function App() {
 //     { key: 'perfil',   label: 'Mi perfil', icon: '👤' },
 //   ];
 
+// styles:
 //   return (
 //     <div style={{ minHeight: '100vh', background: '#F8F8F8', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
 //       <div style={{ maxWidth: 480, margin: '0 auto', padding: '0 16px 80px' }}>
